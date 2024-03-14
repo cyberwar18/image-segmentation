@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="body.css">
+    <title>Image Segmentation and Background Removal</title>
+    
+</head>
+<body>
+    <header>
+        <div class="img">
+        <img height="80px" src="https://bloggytalky.com/wp-content/uploads/2017/07/create-a-free-logo-design-logo-designs-design-a-free-logo-design-a-free-logo-alltech-just-free-logo-design.png"> 
+        </div>
+        <div class="h">
+        <h1> ImageCraft</h1>
+        </div>
+        <div class="right">
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i> welcome
+            </div>
+            <div class="sign-in">
+                sign-in
+            </div>
+            <div class="join-now">
+                join now                   
+            </div>       
+
+        </div>
+    </header>
+    <main>
+        <div class="title-1">
+            <div class="left-tile">
+                 <img src="https://miro.medium.com/v2/resize:fit:640/1*wbaUQkYzRhvmd7IjKJjjCg.gif" alt="">
+            </div>
+            <!DOCTYPE html>
+
+    <div class="right-tile">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+</head>
+<body>
+    <form>
+        <input type="file" id="fileInput" accept="image/*">
+        <button type="button" id="uploadButton">Upload</button>
+    </form>
+    <div>
+        <img id="imageDisplay" src="#" alt="Selected Image">
+    </div>
+    <div id="received-data"></div>
+    <script>
+        document.getElementById("uploadButton").addEventListener("click", async function(event) {
+            event.preventDefault();
+
+            var selectedImage = document.getElementById("fileInput").files[0];
+            var imageName = selectedImage.name;
+
+            // Display selected image
+            var imageDisplay = document.getElementById("imageDisplay");
+            imageDisplay.src = URL.createObjectURL(selectedImage);
+
+            if (selectedImage) {
+                var formData = new FormData();
+                formData.append("image", selectedImage);
+
+                try {
+                    const response = await fetch("http://localhost:5000/upload-image", {
+                        method: "POST",
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+
+                    let data = await response.json();
+                    console.log(data);
+
+                    var receivedDataDiv = document.getElementById("received-data");
+                    receivedDataDiv.textContent = "Server Response: " + data.message;
+                } catch (error) {
+                    console.error("Fetch error:", error);
+                }
+            } else {
+                console.error("No image selected.");
+            }
+        });
+    </script>
+
+            
+            <p>Selected Image Path: <span id="imagePath"></span></p>
+           
+            </div>
+        </div>    
+        <div class="processing-buttons">
+            <div class="title-2">
+                <div class="tr">
+                    <div class="y">                   
+                        <p>
+                            Image segmentation involves converting an image into a collection of regions of pixels that are represented by a mask or a labeled image. By dividing an image into segments, you can process only the important segments of the image instead of processing the entire image.
+                        </p>
+                    </div>    
+                        <div class="op">
+                        
+                        <button id="segmentButton" style="background-color: red;">Segment Image</button>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                const button = document.getElementById("my-button");
+                                button.addEventListener("click", async function(event) {
+                                    // Call a JavaScript function when the button is clicked
+                                    handleButtonClick();
+                                });
+                            });
+                    
+                            function handleButtonClick() {
+                                // Send an AJAX request to the server when the button is clicked
+                                fetch("/activate_function", {
+                                    method: "POST"
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data.message);
+                                })
+                                .catch(error => {
+                                    console.error("Error:", error);
+                                });
+                            }
+                        </script>
+                        </div>
+                        <div class="c">
+                            <a href="https://youtu.be/UkcNV7B9Hsw?si=UPR9F1DJhTTsDozU">click here for more information</a>
+                        </div>
+                   
+                </div>
+                <div class="rt">
+                    <img src="C:\deevia\imgseg\output.jpg" alt="">
+                </div>
+            </div>    
+    
+         <div class="title-3">
+           
+            <div class="yt">
+                <img src="https://images.topmediai.com/topmediai/assets/article/remove-image-background-for-sea-girl.gif" alt="">
+            </div>
+            <div class="ht">
+                <div class="q">                   
+                    <p>
+                        Background removal creates an alpha matte that separates the foreground object from the background in an image. This feature provides two possible outputs based on the customer's needs: The foreground object of the image without the background. 
+                    </p>
+                </div>    
+                    <div class="iu">
+                     <button id="segmentButton" style="background-color: lightblue;"> remove background</py-script> </button>
+                    </div>
+                    <div class="u">
+                        <a href="https://youtu.be/rtHcsPvE7Uw?si=QJCXIzoPzSEDM3eH">click here for more information</a>
+                    </div>
+               
+            </div>
+         </div>    
+        </div>
+        <div class="title-3">
+            <div class="ty">
+                <div class="y">                   
+                    <p>
+                        The new background will appear wherever there is black on the image layer's mask. Experiment with different backgrounds—solid colors, color gradients, patterns, and images—to get the look you want.
+                    </p>
+                </div>    
+                    <div class="ho">
+                     <button id="segmentButton" style="background-color: sandybrown;" script="">Change Background</button>
+                    </div>
+                    <div class="c">
+                        <a href="https://youtu.be/IwEqvjsDVU0">click here for more information</a>
+                    </div>
+               
+            </div>
+            <div class="rt">
+                <img src="https://outsnapped.com/wp-content/uploads/2020/04/background-removal-os-logo.gif" alt="">
+            </div>
+        </div>
+
+        <section class="processed-image">
+            <h2>Processed Image</h2>
+            <img id="processedImage" alt="Processed Image">
+        </section>
+    </main>
+    <footer>
+        <p style="text-align: center;">Thank you for visiting</p>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
